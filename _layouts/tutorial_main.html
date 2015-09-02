@@ -3,8 +3,10 @@ layout: main
 ---
   
 <ul id="tut-nav">
-    {% for post in site.categories.tutorials %}
-    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+    {% for post in site.posts %}
+        {% if post.category == "tutorials" %}
+        <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endif %}
     {% endfor %}
 </ul>
 

@@ -1,4 +1,5 @@
 ---
+category: tutorials
 layout: tutorial_post
 title:  "Getting started with Spark and Docker"
 date:   2015-04-14 10:34:52

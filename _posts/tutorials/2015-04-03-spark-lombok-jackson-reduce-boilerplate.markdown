@@ -1,4 +1,5 @@
 ---
+category: tutorials
 layout: tutorial_post
 title:  "Spark for REST APIs: Using Spark, Lombok and Jackson to reduce Java boilerplate"
 author: <a href="http://tomassetti.me" target="_blank">Federico Tomassetti</a>

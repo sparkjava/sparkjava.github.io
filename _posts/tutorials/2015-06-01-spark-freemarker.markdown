@@ -1,4 +1,5 @@
 ---
+category: tutorials
 layout: tutorial_post
 title:  "Spark and Freemarker: Exposing HTML and JSON from the same service"
 author: <a href="http://tomassetti.me" target="_blank">Federico Tomassetti</a>

@@ -1,4 +1,5 @@
 ---
+category: tutorials
 layout: tutorial_post
 title:  "A groovy Sparkberry Pi: Running Spark on Raspberry Pi in minutes (with groovy)"
 date:   2015-07-17 19:02:00

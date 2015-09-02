@@ -1,4 +1,5 @@
 ---
+category: tutorials
 layout: tutorial_post
 title:  "Spark and Databases: Configuring Spark to work with Sql2o in a testable way"
 author: <a href="http://tomassetti.me" target="_blank">Federico Tomassetti</a>

@@ -1,4 +1,5 @@
 ---
+category: tutorials
 layout: tutorial_post
 title:  "Spark and Testing - Part 1: Background and Unit Tests"
 author: <a href="http://tomassetti.me" target="_blank">Federico Tomassetti</a>

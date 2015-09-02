@@ -1,4 +1,5 @@
 ---
+category: tutorials
 layout: tutorial_post
 title:  "Spark Video Tutorials"
 author: <a href="https://www.linkedin.com/in/davidaase" target="_blank">David Åse</a>
