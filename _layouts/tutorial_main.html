@@ -3,10 +3,8 @@ layout: main
 ---
   
 <ul id="tut-nav">
-    {% for post in site.posts %}
-        {% if post.category == "tutorials" %}
+    {% for post in site.posts | where: "category", "tutorials" %}
         <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-        {% endif %}
     {% endfor %}
 </ul>
 
