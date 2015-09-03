@@ -1,0 +1,19 @@
+---
+layout: blog_main
+title: Blog
+permalink: /blog/
+---
+
+<div class="posts">
+{% assign blogposts = (site.posts | where: "category" , "blog") %}
+{% for post in blogposts %}
+  <div class="post">
+    <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+    <div class="post-meta">
+        {{ post.date | date: "%b %-d, %Y" }}
+        {% if post.author %} • Written by {{ post.author }} {% endif %} • Spark Framework Tutorials
+     </div>
+    <p>{{ post.summary }}</p>
+  </div>
+{% endfor %}
+</div>

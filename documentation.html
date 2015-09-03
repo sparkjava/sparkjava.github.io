@@ -1,0 +1,16 @@
+---
+layout: main
+title: Documentation
+permalink: /documentation/
+---
+
+<h1>Docs page</h1>
+
+{% capture code %}
+<dependency>
+    <groupId>com.sparkjava</groupId>
+    <artifactId>spark-core</artifactId>
+    <version>2.2</version>
+</dependency>
+{% endcapture %}
+{% include docs/codeSnippet.html lang="markup" code=code %}

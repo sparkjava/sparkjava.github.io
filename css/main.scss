@@ -120,7 +120,7 @@ nav li:nth-child(2) {
 #video-tuts h3 {
     margin: 20px 0 0;
 }
-#tut-nav {
+.rightMenu {
   width: 200px;
   position: fixed;
   left: 50%;
@@ -130,14 +130,14 @@ nav li:nth-child(2) {
   top: 100px;
   z-index: 999999
 }
-#tut-nav li {
+.rightMenu li {
   font-size: 14px;
   margin-bottom: 10px
 }
-#tut-nav a {
+.rightMenu a {
   text-decoration: none
 }
-#tut-nav a:hover {
+.rightMenu a:hover {
   color: #c07d10;
   text-decoration: underline
 }

@@ -3,8 +3,8 @@ layout: main
 ---
   
 <ul class="rightMenu">
-    {% assign tutorials = (site.posts | where: "category" , "tutorials") %}
-    {% for post in tutorials %}
+    {% assign blogposts = (site.posts | where: "category" , "blog") %}
+    {% for post in blogposts %}
         <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>
