@@ -27,19 +27,19 @@ Maven projects are configured using a
 <h2 id="intellij">Instructions for IntelliJ IDEA</h2>
 
 <br>Click "File" and select "New project...":
-<img src="/img/tutorials/posts/mavenTut/idea1.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/idea1.png" alt="">
 
 <br>Select "Maven" on the left hand menu and click "Next":
-<img src="/img/tutorials/posts/mavenTut/idea2.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/idea2.png" alt="">
 
 <br>Enter GroupId, ArtifactId and Verison, and click "Next":
-<img src="/img/tutorials/posts/mavenTut/idea3.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/idea3.png" alt="">
 
 <br>Give your project a name and click "Finish":
-<img src="/img/tutorials/posts/mavenTut/idea4.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/idea4.png" alt="">
 
 <br>Paste the Spark dependency into the generated pom.xml. If prompted, tell IntelliJ to enable auto-import.
-<img src="/img/tutorials/posts/mavenTut/idea5.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/idea5.png" alt="">
 <pre><code class="language-markup">
 {% capture code %}{% include tutorials/codeExamples/sparkMaven/sparkMaven.xml %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
@@ -50,7 +50,7 @@ Maven projects are configured using a
 </code></pre>
 
 <br>Into a new Class, "Main.java":
-<img src="/img/tutorials/posts/mavenTut/idea6.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/idea6.png" alt="">
 
 <br>Now everything is ready for you to run your main Class. Enjoy!
 
@@ -59,19 +59,19 @@ Maven projects are configured using a
 <h2 id="eclipse">Instructions for Eclipse</h2>
 
 <br>Click "File" and select "New" then "Other...":
-<img src="/img/tutorials/posts/mavenTut/eclipse1.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/eclipse1.png" alt="">
 
 <br>Expand "Maven" and select "Maven Project", then click "Next":
-<img src="/img/tutorials/posts/mavenTut/eclipse2.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/eclipse2.png" alt="">
 
 <br>Check the "Create a simple project" checkbox and click "Next":
-<img src="/img/tutorials/posts/mavenTut/eclipse3.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/eclipse3.png" alt="">
 
 <br>Enter GroupId, ArtifactId, Verison, and Name, and click "Finish":
-<img src="/img/tutorials/posts/mavenTut/eclipse4.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/eclipse4.png" alt="">
 
 <br>Open the pom.xml file and click the "pom.xml" tab. Paste in the Spark dependency:
-<img src="/img/tutorials/posts/mavenTut/eclipse5.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/eclipse5.png" alt="">
 <pre><code class="language-markup">
 {% capture code %}{% include tutorials/codeExamples/sparkMaven/sparkMaven.xml %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
@@ -85,7 +85,7 @@ Maven projects are configured using a
 </code></pre>
 
 <br>Into a new Class, "Main.java":
-<img src="/img/tutorials/posts/mavenTut/eclipse6.png" alt="">
+<img src="/public/img/tutorials/posts/mavenTut/eclipse6.png" alt="">
 
 <br>Now everything is ready for you to run your main Class. Enjoy!
 

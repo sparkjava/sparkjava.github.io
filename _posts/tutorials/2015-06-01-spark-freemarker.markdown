@@ -139,7 +139,7 @@ get("/posts", (request, response) -> {
 
 And this should be the result:
 
-<img class="img-bordered" src="/img/tutorials/posts/marvellousBlog.png" alt="Screenshot of blog">
+<img class="img-bordered" src="/public/img/tutorials/posts/marvellousBlog.png" alt="Screenshot of blog">
 
 ##How to pass data to the template
 
@@ -168,7 +168,7 @@ What's happening here?
 
 And this should be the result, displaying a couple of posts:
 
-<img class="img-bordered" src="/img/tutorials/posts/marvellousBlog2.png" alt="Screenshot of blog">
+<img class="img-bordered" src="/public/img/tutorials/posts/marvellousBlog2.png" alt="Screenshot of blog">
 
 The example using FreeMarker is present in the <a href="https://github.com/sparktutorials/BlogService_SparkExample" target="_blank">GitHub repository</a> under the tag freemarker.
 
