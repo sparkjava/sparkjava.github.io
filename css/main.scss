@@ -2,8 +2,8 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+@import 'normalize';
 @import 'main';
+@import 'header';
 @import 'responsive';
 @import 'prism';
-
-

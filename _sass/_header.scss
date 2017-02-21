@@ -1,0 +1,66 @@
+header {
+    z-index: 1;
+    background: #fff;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+nav {
+    position: relative;
+    #logo img {
+        margin: 10px 0;
+        height: 60px;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        float: right;
+        height: 30px;
+        margin-top: 40px;
+        li {
+            display: inline-block;
+            a {
+                display: block;
+                color: #333;
+                text-decoration: none;
+                margin: 0 5px; 
+                padding: 10px 5px;
+            }
+            &:last-of-type a {
+                padding-right: 0;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+#some-buttons {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    #githubStar {
+        display: inline-block;
+        width: 95px;
+        height: 20px;
+        position: relative;
+        #starBg,
+        #starFrame {
+            position: absolute;
+        }
+    }
+    a {
+        display: inline-block;
+        &:last-of-type {
+            margin-left: 3px;
+        }
+        img {
+            border-radius: 3px;
+            height: 20px;
+        }
+    }
+}

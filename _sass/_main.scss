@@ -4,24 +4,16 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-#githubStar {
-    display: inline-block;
-    width: 95px;
-    height: 20px;
-    margin: 2px 0;
-    position: relative;
+html {
+    overflow-y: scroll;
 }
 
-#starBg, #starFrame {
-    position: absolute;
+body {
+    padding: 100px 20px 20px;
 }
 
-#some-buttons {
-    a {
-        display: inline-block;
-        img {
-            border-radius: 5px;
-            height: 24px;
-        }
-    }
+.width-limit {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }

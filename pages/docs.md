@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Docs
-permalink: /docs/
+permalink: /documentation/
 ---
 
 # Docs
