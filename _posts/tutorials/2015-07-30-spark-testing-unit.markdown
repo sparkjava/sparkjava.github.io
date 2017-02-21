@@ -1,17 +1,17 @@
 ---
-category: tutorials
-layout: tutorial_post
-title:  "Spark and Testing - Part 1: Background and Unit Tests"
+layout: tutorial
+title:  "Unit Testing in Spark"
 author: <a href="http://tomassetti.me" target="_blank">Federico Tomassetti</a>
 date:   2015-07-30 10:34:52
 comments: true
+permalink: /tutorials/unit-testing
 summary: >
   In this tutorial series you will learn an approach for writing testable Spark applications from the ground up. In part one we will discuss what and when to test, and write some unit tests. In part two we will cover functional tests.
 ---
 
 <div class="notification"><em>This is part one of a two-part tutorial series on testing in which we will outline how to write a testable Spark application from the ground up. If you already have a finished application that you want to start testing using the approach described here, some refactoring will be required. </em></div>
 
-##The plan
+## The plan
 There are many different forms of tests that can be used to assure that the different properties of your applications are maintained over time. In these tutorials we will focus exclusively on application logic (we verify that the application does what is supposed to do). We will not consider non-functional aspects (like response time, load handling, etc.).
 
 In the first tutorial we are going to focus on *unit tests*, while in the second tutorial we are going to focus on *functional tests*:
@@ -19,7 +19,7 @@ In the first tutorial we are going to focus on *unit tests*, while in the second
 * *unit tests*, to verify that classes or methods are logically correct
 * *functional tests*, to ensure that the whole application correctly implements our features
 
-We are going to use two different approaches for implementig these tests:
+We are going to use two different approaches for implementing these tests:
 
 * *unit tests* will be written in *Java using JUnit*. We will describe a pattern to make logic easy to test
 * *functional tests* are going to be written using *Cucumber and Ruby*
@@ -28,7 +28,7 @@ We will start by examining when to use each testing approach, then we will see h
 
 The examples are based on our Blog service application, and all the code is available on <a href="https://github.com/sparktutorials/BlogService_SparkExample" target="_blank">GitHub.</a>
 
-##Logic and plumbing code
+## Logic and plumbing code
 
 In my opinion, code can be divided roughly into two parts: the **logic** and the **plumbing**: 
 
@@ -45,9 +45,9 @@ Because of this, my test strategy can be divided in two steps:
 
 It's time to get started! As mentioned before, we will begin with unit tests. Functional tests (using Cucumber and Ruby) will have to wait for Part 2 of this tutorial series.
 
-##The RequestHandler interface
+## The RequestHandler interface
 
-To separate logic and plumbing code we want to insulate the logic from the *Spark specific* bits in our application. The logic should be as insulated as possible, so that we could one day replace Spark with something else and leave the logic untouched (of course, no one in their right mind would stop using Spark, it was a very hyphotetical example!).
+To separate logic and plumbing code we want to insulate the logic from the *Spark specific* bits in our application. The logic should be as insulated as possible, so that we could one day replace Spark with something else and leave the logic untouched (of course, no one in their right mind would stop using Spark, it was a very hypothetical example!).
 
 Instead of just implementing *Routes*, we will create an interface which is project specific. We start by looking at what information we need to use to serve the different requests. If you look at the application we built in the previous tutorials, you will see that for each request we:
 
@@ -140,7 +140,7 @@ We will create subclasses of _AbstractRequestHandler_, instantiate them and use 
 
 The rest of the _handle_ method get the result from _process_ and instruct Spark to send the response.
 
-##How to write and use RequestHandlers
+## How to write and use RequestHandlers
 
 Now, let's see how to use this class. Before we had our logic defined in anonymous classes implementing the _Route_ interface. For example:
 
@@ -187,13 +187,13 @@ And we will use this class as our _Route_ (remember that _AbstractRequestHandler
 post("/posts", new PostsCreateHandler(model));
 </code></pre>
 
-##Unit tests
+## Unit tests
 
 At this point we can simply test our logic by writing tests for our _RequestHandlers_. It's simple because we do not need to mock anything related to Spark. We just need to mock our _Model_, which represents the way we access the database. However it has a simple interface and mocking it is straightforward. Let's look at some examples.
 
 Class <a href="https://github.com/sparktutorials/BlogService_SparkExample/blob/unit_tests/src/test/java/me/tomassetti/handlers/PostsCreateHandlerTest.java" target="_blank">PostsCreateHandlerTest</a>:
 
-<pre><code class="language-java">ppublic class PostsCreateHandlerTest {
+<pre><code class="language-java">public class PostsCreateHandlerTest {
 
     @Test
     public void anInvalidNewPostReturnsBadRequest() {
@@ -231,19 +231,19 @@ Class <a href="https://github.com/sparktutorials/BlogService_SparkExample/blob/u
 
 }</code></pre>
 
-As you can see, in _anInvalidNewPostReturnsBadRequest_ we simply prepare an invalid _NewPostPayload_, and we pass it to an instance of _PostsCreateHandler_. We then pass an empty map (no url params needed here), and we invoke the method both with the parameter _shouldReturnHtml_ false and true, to verify that we get the same behavior in both cases. To test the answer is very easy: we just check that we get the expected _Answer_. In this case we expect the HTTP code 400 to be returned, because the request is not valid: this is beucuase the _newPost_ value was not valid.
+As you can see, in _anInvalidNewPostReturnsBadRequest_ we simply prepare an invalid _NewPostPayload_, and we pass it to an instance of _PostsCreateHandler_. We then pass an empty map (no url params needed here), and we invoke the method both with the parameter _shouldReturnHtml_ false and true, to verify that we get the same behavior in both cases. To test the answer is very easy: we just check that we get the expected _Answer_. In this case we expect the HTTP code 400 to be returned, because the request is not valid: this is because the _newPost_ value was not valid.
 
 In the second test (_aPostIsCorrectlyCreated_) we verify that _model.createPost_ is invoked passing the values we specified in our _NewPostPayload_ instance. Easy, eh?
 
 We have other tests in <a href="https://github.com/sparktutorials/BlogService_SparkExample/blob/unit_tests/src/test/java/me/tomassetti/handlers/PostsIndexHandlerTest.java" target="_blank">PostsIndexHandlerTest</a>:
 
 <pre><code class="language-java">
-{% capture code %}{% include tutorials/codeExamples/sparkTestingUnit/postsIndexHandlerTest.java %}{% endcapture %}{{ code | xml_escape }}
+{% capture code %}{% include codeExamples/sparkTestingUnit/postsIndexHandlerTest.java %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
 
 Here we just test that the JSON and HTML returned in the body of the Answer are the one expected. Pretty straightforward.
 
-##Conclusions
+## Conclusions
 
 I hope this post helped you by showing one possible way to approach testing Spark applications. This approach tries to be simple and effective, in the spirit of Spark. I can see two possible disadvantages with this approach:
 
@@ -251,5 +251,3 @@ I hope this post helped you by showing one possible way to approach testing Spar
 * we do not have unit tests for the "plumbing bits" of the application. For that part we rely on functional tests
 
 I have used this approach in practice, obtaining decent results, however, it's not always the best choice: sometimes you want to create very simple applications (just a few hundreds lines of code), and you do not want to go through the hassle of introducing separate handler classes. In other cases you want to have high unit tests coverage. Needs can be different, and testing approaches should be chosen accordingly. I hope this tutorial can serve as a starting point. Happy testing!
-
-{% include tutorials/authorTomassetti.html %}

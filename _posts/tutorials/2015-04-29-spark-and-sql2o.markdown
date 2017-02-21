@@ -1,15 +1,15 @@
 ---
-category: tutorials
-layout: tutorial_post
+layout: tutorial
 title:  "Spark and Databases: Configuring Spark to work with Sql2o in a testable way"
 author: <a href="http://tomassetti.me" target="_blank">Federico Tomassetti</a>
 date:   2015-04-29 10:34:52
 comments: true
+permalink: /tutorials/sql2o-database
 summary: This tutorial will teach you how to use a database with your Spark application. We will discuss when it is appropriate to use an ORM and describe how you can organize your code to make it easily testable.
 ---
 
-##What you will learn in this post
-In my [last tutorial]({% post_url /tutorials/2015-04-03-spark-lombok-jackson-reduce-boilerplate %}) we saw how to use Java 8 with Spark, Lombok and Jackson to create a lightweight REST service. One thing we did not examine was how to persist (store) data. 
+## What you will learn in this post
+In my [last tutorial]({% post_url 2015-04-03-spark-lombok-jackson-reduce-boilerplate %}) we saw how to use Java 8 with Spark, Lombok and Jackson to create a lightweight REST service. One thing we did not examine was how to persist (store) data. 
 In this post I would like to describe a way to organize the integration of the database layer with the rest of your Spark application.
 
 In this post we will see
@@ -25,7 +25,7 @@ What we will not see in this post (but probably in a future one):
 
 Most of what we will learn could be adapted to other systems like myBatis or also ORMs like Hibernate. In my opinion the important thing is to come up with a design that is easily testable. Ideally you should write both unit tests and functional tests, and create a reliable REST service based on Spark.
 
-##To ORM or not to ORM?
+## To ORM or not to ORM?
 The first question is: "What kind of database library should we use?"
 There are different approaches out there, with their pros and cons. We basically can divide them in two families:
 
@@ -47,10 +47,10 @@ So which approach you should be using? I think it depends:
 
 In the end if I am sure that supporting one database (let's say <a href="http://www.postgresql.org/" target="_blank">PostgreSQL</a>) is enough my default choice is the lightweight approach. I have used myBatis years ago and I wanted to try Sql2o now.
 
-##Designing the Model
+## Designing the Model
 Let's assume you have access to a database. During development I would suggest to use a PostgreSQL server running in a Docker container:
 
-* if you are already using Docker do not miss the [tutorial on running Spark inside a Docker container]({% post_url /tutorials/2015-04-14-getting-started-with-spark-and-docker %}) 
+* if you are already using Docker do not miss the [tutorial on running Spark inside a Docker container]({% post_url 2015-04-14-getting-started-with-spark-and-docker %}) 
 * if you are new to Docker you could check out a tutorial I wrote about <a href="http://tomassetti.me/getting-started-with-docker-from-a-developer-point-of-view-how-to-build-an-environment-you-can-trust/" target="_blank">getting started with Docker from a developer point of view</a> .
 
 Docker or non Docker, I would assume you can now connect to your database.
@@ -58,13 +58,13 @@ Docker or non Docker, I would assume you can now connect to your database.
 Now let's start to setup the dependencies in Maven: In addition to the Spark dependencies, you should add Sql2o and the jdbc extension specific to the database you are going to connect to. In my case I chose PostgreSQL:
 
 <pre><code class="language-markup">
-{% capture code %}{% include tutorials/codeExamples/sql2o/mavenDep.html %}{% endcapture %}{{ code | xml_escape }}
+{% capture code %}{% include codeExamples/sql2o/mavenDep.html %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
 
 This is the schema we are going to use:
 
 <pre><code class="language-sql">
-{% capture code %}{% include tutorials/codeExamples/sql2o/tablesSetup.html %}{% endcapture %}{{ code | xml_escape }}
+{% capture code %}{% include codeExamples/sql2o/tablesSetup.html %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
 
 Our data model is based on our posts. A post is identified by a unique UUID, basically a large number. Each post can be part of many categories (or possibly zero). To each post we can add comments. Comments can be approved or not. Does it all make sense so far?
@@ -72,14 +72,14 @@ Our data model is based on our posts. A post is identified by a unique UUID, bas
 Now, let's start by defining a Model interface and one interface for each table of the database, with no references to the library we are going to use (Sql2o). The rest of your code will depend on this interface, not on the concrete implementation based on Sql2o that we are going to build. This will permit us to have testable code. For example we could use in our tests a dummy implementation storing data in memory.
 
 <pre><code class="language-java">
-{% capture code %}{% include tutorials/codeExamples/sql2o/javaModel.html %}{% endcapture %}{{ code | xml_escape }}
+{% capture code %}{% include codeExamples/sql2o/javaModel.html %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
 
-##Implement the Model using Sql2o
+## Implement the Model using Sql2o
 Great! It is now time to write some code that could actually integrate with a real database. The code it is pretty straightforward, if you know your SQL:
 
 <pre><code class="language-java">
-{% capture code %}{% include tutorials/codeExamples/sql2o/sql2oModel.html %}{% endcapture %}{{ code | xml_escape }}
+{% capture code %}{% include codeExamples/sql2o/sql2oModel.html %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
 
 A few comments:
@@ -91,11 +91,11 @@ A few comments:
 
 This is probably all you need to know about Sql2o to write pretty complex services. Maybe you just need to refresh your SQL (do you remember how to a delete? Joins?)
 
-##Controllers
+## Controllers
 At this point we just need to use our model. Let's see how to write the main method of our application:
 
 <pre><code class="language-java">
-{% capture code %}{% include tutorials/codeExamples/sql2o/controller.html %}{% endcapture %}{{ code | xml_escape }}
+{% capture code %}{% include codeExamples/sql2o/controller.html %}{% endcapture %}{{ code | xml_escape }}
 </code></pre>
 
 A few comments:
@@ -106,7 +106,7 @@ A few comments:
 * Once we have an object representing the data associated to the request, we basically pass the content to some call of the model.
 * Possibly we return the result of some call to model. We convert the Java beans to JSONstrings using dataToJson (again, look it up on GitHub for the code).
 
-##A complete example
+## A complete example
 
 We start the application by running:
 
@@ -119,27 +119,27 @@ You will need to adapt the parameters to point to your database server. If every
 
 A first get to <em>localhost:4567/posts</em> should return an empty list of posts
 
-<img class="img-bordered" src="/public/img/tutorials/posts/postman_2_1.png" alt="Testing with Postman">
+<img class="img-bordered" src="/img/posts/sparkSql2o/postman_2_1.png" alt="Testing with Postman">
 
 Now we insert a post with a post to localhost:4567/posts specifying the values of the post in the body of the request. We should get back the UUID of the post created.
 
-<img class="img-bordered" src="/public/img/tutorials/posts/postman_2_2.png" alt="Testing with Postman">
+<img class="img-bordered" src="/img/posts/sparkSql2o/postman_2_2.png" alt="Testing with Postman">
 
 Now asking again for the list of posts we should be able to get a list of one element: the post we just inserted
 
-<img class="img-bordered" src="/public/img/tutorials/posts/postman_2_3.png" alt="Testing with Postman">
+<img class="img-bordered" src="/img/posts/sparkSql2o/postman_2_3.png" alt="Testing with Postman">
 
 Let's add a comment by sending a post to <em>localhost:4567/posts/b3f202dd-1d44-4612-81da-4ea65b49952f/comments</em>. You should change to the UUID of the post that you want to comment. Note that if you use an UUID of a not existing post you should get a 404 code back (meaning "not found").
 
 In this case we get back the UUID of the comment created.
 
-<img class="img-bordered" src="/public/img/tutorials/posts/postman_2_4.png" alt="Testing with Postman">
+<img class="img-bordered" src="/img/posts/sparkSql2o/postman_2_4.png" alt="Testing with Postman">
 
 Finally we should be able to get the list of comments for our post by using a get to <em>localhost:4567/posts//b3f202dd-1d44-4612-81da-4ea65b49952f/comments</em>
 
-<img class="img-bordered" src="/public/img/tutorials/posts/postman_2_5.png" alt="Testing with Postman">
+<img class="img-bordered" src="/img/posts/sparkSql2o/postman_2_5.png" alt="Testing with Postman">
 
-##Conclusion
+## Conclusion
 Our service is not complete: for example, we need endpoints to approve the comments (I am sure you can think of many other improvements). However, even if very limited, we have seen how it is possible to build a RESTful service, with persistent data in a few clear lines of Java. No long configuration files, no _auto-magic_ components that break all of a sudden (typically on a Friday evening). 
 
 <b>Just a few simple, reliable, understandable lines of code.</b>
@@ -148,5 +148,3 @@ There are things we are missing: We do not properly catch exceptions which are t
 
 At this point we just need proper tests: We should have unit tests to verify that the controllers behave properly. To write them we could mock our Model. 
 Testing the SQL code is more complex: I normally use functional tests. Cucumber is a nice tool and we could launch a docker container from inside our functional tests. I think that testing is the next big thing we need to focus on and probably you could soon read a specific tutorial on this website.
-
-{% include tutorials/authorTomassetti.html %}

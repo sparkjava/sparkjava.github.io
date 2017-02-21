@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#githubStar {
+    display: inline-block;
+    width: 95px;
+    height: 20px;
+    margin: 2px 0;
+    position: relative;
+}
+
+#starBg, #starFrame {
+    position: absolute;
+}
+
+#some-buttons {
+    a {
+        display: inline-block;
+        img {
+            border-radius: 5px;
+            height: 24px;
+        }
+    }
+}

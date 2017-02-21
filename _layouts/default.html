@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>"http:"===location.protocol&&"sparktutorials.github.io"===document.location.hostname&&(location.href=location.href.replace(/^http:/,"https:"));</script>
+    <script>for(var a="header main footer".split(" "),b=0;b<a.length;b++){document.createElement(a[b])}</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - Spark Framework Tutorials{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <meta name="google-site-verification" content="HX9v0k1uPAE8oRVglGZMdID4ighR4gbqYe30e_4LBBU" />
+</head>
+<body>
+    {% include gtm.html %}
+    <a id="fork-me" href="https://github.com/perwendel/spark" target="_blank">
+        <img style="position:fixed;top:0;right:0;border:0;z-index:99999" src="{% include base64/ghFork.b64 %}" alt="Fork me on GitHub">
+    </a>
+    <div id="some-buttons">
+        <a class="img-button" href="https://twitter.com/sparkjava" target="_blank">
+            <img src="{% include base64/twitter.b64 %}" title="Follow Spark on Twitter" alt="Follow Spark on Twitter">
+        </a>
+        <a class="img-button" href="https://www.facebook.com/sparkjava" target="_blank">
+            <img src="{% include base64/facebook.b64 %}" title="Follow us on Facebook" alt="Like us on facebook">
+        </a>
+        <div id="githubStar"><img id="starBg" style="width:92px;height:20px;" src="{% include base64/ghStars.b64 %}">
+            <iframe id="starFrame" class="githubStar" 
+                    src="https://ghbtns.com/github-btn.html?user=perwendel&amp;repo=spark&amp;type=star&amp;count=true" 
+                    frameborder="0" scrolling="0" width="95px" height="20px">
+            </iframe>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li id="logo"><a href="/"><img src="/img/logo.svg"></a></li>
+                <li><a href="/download">Download</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/tutorials">Tutorials</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/news">News</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>
+        CMS TEST - If you don't know why you're here, please go to <a href="http://sparkjava.com">http://sparkjava.com</a>
+    </h1>
+    <main>
+        {{ content }}
+    </main>
+    <footer>
+        The source code for Spark Tutorials is available on <a href="https://github.com/sparktutorials/sparktutorials.github.io" target="_blank">GitHub</a>.
+        If you find any errors, please create an issue or a pull request.
+    </footer>
+    <script src="/js/prism.js"></script>
+</body>
+</html>
