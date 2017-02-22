@@ -13,6 +13,6 @@ Prism.languages.sql={comment:{pattern:/(^|[^\\])(?:\/\*[\w\W]*?\*\/|(?:--|\/\/|#
 //trim blank lines around code
 var codeBlocks = document.getElementsByTagName("code");
 for (var i = 0; i < codeBlocks.length; i++) {
-    console.log(codeBlocks[i].innerHTML = codeBlocks[i].innerHTML.trim());
+    codeBlocks[i].innerHTML = codeBlocks[i].innerHTML.trim();
 }
 

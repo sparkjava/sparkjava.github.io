@@ -4,9 +4,11 @@ title: News
 permalink: /news/
 ---
 
-Follow us on 
-<a href="https://twitter.com/sparkjava" target="_blank">Twitter</a> 
-to get the latest news, and other Spark related content
+<div class="notification">
+    Follow us on 
+    <a href="https://twitter.com/sparkjava" target="_blank">Twitter</a> 
+    to get the latest news, and other Spark related content
+</div>
 
 ## Spark 2.5.1/2.5.2 static files vulnerability
 Early November 2016 a <a href="http://www.cvedetails.com/vulnerability-list/vendor_id-15987/product_id-34958/version_id-203903/Sparkjava-Spark-2.5.html" target="_blank">vulnerability</a> in how Spark 2.5/2.5.1 handles static files was exposed through a <a href="http://marc.info/?l=full-disclosure&amp;m=147814643630342&amp;w=2" target="_blank">mailing list</a>.
