@@ -1,6 +1,8 @@
 {% assign tutorials = (site.posts | where: "layout" , "tutorial") %}
-<ul>
-    {% for tutorial in tutorials %}
-    <li><a href="{{ tutorial.url }}">{{ tutorial.title }}</a></li>
-    {% endfor %}
-</ul>
+<div class="right-menu">
+    <ul>
+        {% for tutorial in tutorials %}
+        <li><a href="{{ tutorial.url }}">{{ tutorial.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
