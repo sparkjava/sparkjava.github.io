@@ -28,7 +28,8 @@ We're usually very friendly, but questions like "How do I add Spark to Maven", s
     twitter = "perwendel"
     linkedin = "perwendel" 
     github = "perwendel" 
-    email = "per.i.wendel@gmail.com" 
+    email = "per.i.wendel@gmail.com"
+    imgFile = "per.png"
 %}
 
 {% include macros/teamMember.html 
@@ -38,4 +39,5 @@ We're usually very friendly, but questions like "How do I add Spark to Maven", s
     linkedin = "davidase" 
     github = "tipsy" 
     email = "mail.davidase@gmail.com" 
+    imgFile = "david.png"
 %}
