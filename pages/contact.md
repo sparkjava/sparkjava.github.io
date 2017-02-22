@@ -4,10 +4,9 @@ title: Contact
 permalink: /contact/
 ---
 
-<div class="notification">
-    Technical questions? Please use <a href="http://stackoverflow.com/questions/tagged/spark-java" target="_blank">stack overflow</a> with the "spark-java" tag.
-    <br>
-    Follow us on <a href="https://twitter.com/sparkjava" target="_blank">Twitter</a> to get the latest news, and other Spark related content
+<div class="notification" markdown="1">
+Technical questions? Please use [stack overflow](http://stackoverflow.com/questions/tagged/spark-java) with the "spark-java" tag.
+Follow us on [Twitter](https://twitter.com/sparkjava) to get the latest news, and other Spark related content
 </div>
 
 ## Get Involved
@@ -19,7 +18,7 @@ Please try to email us. If this fails, follow [these steps](/news/#best-practice
 ## The Team
 If you have questions that can't be asked elsewhere, please contact the most appropriate team member.
 We're usually very friendly, but questions like "How do I add Spark to Maven", should be asked on 
-<a href="http://stackoverflow.com/questions/tagged/spark-java" target="_blank">stack overflow</a> with the "spark-java" tag.
+[stack overflow](http://stackoverflow.com/questions/tagged/spark-java) with the "spark-java" tag.
 
 {% include macros/teamMember.html
     firstName = "Per"

@@ -14,3 +14,13 @@ html {
     max-width: 840px;
     margin: 0 auto;
 }
+
+.right-menu {
+    position: fixed;
+    left: 50%;
+    list-style: none;
+    padding: 0;
+    margin-left: 430px;
+    top: 110px;
+    z-index: 999999;
+}

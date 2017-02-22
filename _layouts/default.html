@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title %}{{ page.title }} - Spark Framework{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} - Spark Framework: A tiny Java web framework{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}">
@@ -46,7 +46,7 @@
     </header>
     {% if page.permalink == "/" %}{% include sparkBanner.html %}{% endif %}
     <main class="width-limit">
-        <h1 style="color:red!important">
+        <h1 style="color:red!important;background:pink;">
             CMS TEST - If you don't know why you're here, please go to <a href="http://sparkjava.com">http://sparkjava.com</a>
         </h1>
         {{ content }}
@@ -56,5 +56,12 @@
         If you find any errors, please create an issue or a pull request.
     </footer>
     <script src="/js/prism.js"></script>
+    <script id="add-target-blank-to-external-links">
+        for (var i = 0; i < document.links.length; i++) {
+           if (document.links[i].hostname != window.location.hostname) {
+               document.links[i].target = "_blank";
+           } 
+        }
+    </script>
 </body>
 </html>
