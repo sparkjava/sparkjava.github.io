@@ -44,7 +44,7 @@ permalink: /documentation/
 </dependency>
 ~~~
 
-[Not familiar with Maven? Click here for more detailed instructions.](https://sparktutorials.github.io/2015/04/02/setting-up-a-spark-project-with-maven.html)
+[Not familiar with Maven? Click here for more detailed instructions.](/tutorials/maven-setup)
 
 ### Other dependency managers:
 ~~~java

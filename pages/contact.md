@@ -6,7 +6,7 @@ permalink: /contact/
 
 <div class="notification" markdown="1">
 Technical questions? Please use [stack overflow](http://stackoverflow.com/questions/tagged/spark-java) with the "spark-java" tag.
-Follow us on [Twitter](https://twitter.com/sparkjava) to get the latest news, and other Spark related content
+Follow us on [Twitter](https://twitter.com/sparkjava) to get the latest news, and other Spark related content.
 </div>
 
 ## Get Involved
