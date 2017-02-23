@@ -437,17 +437,17 @@ get("/hello", (request, response) -> new MyMessage("Hello World"), gson::toJson)
 # Views and Templates
 Spark has community-provided wrappers for a lot of popular template engines:
 
-*   [Velocity](#velocity) (very mature, feature rich, great IDE support)
-*   [Freemarker](#freemarker) (very mature, feature rich, great IDE support)
-*   [Mustache](#mustache) (mature, decent IDE support)
-*   [Handlebars](#handlebars) (mature, decent IDE support)
-*   [Jade](#jade) (mature, decent IDE support)
-*   [Thymeleaf](#thymeleaf) (mature, feature rich, decent IDE support)
-*   [Pebble](#pebble) (we know very little about this)
-*   [Water](#water) (we know very little about this)
-*   [jTwig](#jtwig) (we know very little about this)
-*   [Jinjava](#jinjava) (we know very little about this)
-*   [Jetbrick](#jetbrick) (we know very little about this)
+* [Velocity](#velocity) (very mature, feature rich, great IDE support)
+* [Freemarker](#freemarker) (very mature, feature rich, great IDE support)
+* [Mustache](#mustache) (mature, decent IDE support)
+* [Handlebars](#handlebars) (mature, decent IDE support)
+* [Jade](#jade) (mature, decent IDE support)
+* [Thymeleaf](#thymeleaf) (mature, feature rich, decent IDE support)
+* [Pebble](#pebble) (we know very little about this)
+* [Water](#water) (we know very little about this)
+* [jTwig](#jtwig) (we know very little about this)
+* [Jinjava](#jinjava) (we know very little about this)
+* [Jetbrick](#jetbrick) (we know very little about this)
 
 There are two main ways of rendering a template in Spark. You can either call render directly in a standard route declaration (recommended), or you can provide the template-engine as a third-route parameter (likely to be removed in the future):
 
@@ -482,7 +482,17 @@ public static String render(Map<String, Object> model, String templatePath) {
 }
 ~~~
 
-MAKE TEMPLATE ENGINE MACRO HERE
+{% include macros/templateEngine.html name="velocity" version = "2.5.5" %}
+{% include macros/templateEngine.html name="freemarker" version = "2.5.5" %}
+{% include macros/templateEngine.html name="mustache" version = "2.5.5" %}
+{% include macros/templateEngine.html name="handlebars" version = "2.5.5" %}
+{% include macros/templateEngine.html name="jade" version = "2.5.5" %}
+{% include macros/templateEngine.html name="thymeleaf" version = "2.5.5" %}
+{% include macros/templateEngine.html name="pebble" version = "2.5.5" %}
+{% include macros/templateEngine.html name="water" version = "2.5.5" %}
+{% include macros/templateEngine.html name="jtwig" version = "2.5.5" %}
+{% include macros/templateEngine.html name="jinjava" version = "2.5.5" %}
+{% include macros/templateEngine.html name="jetbrick" version = "2.5.5" %}
 
 # Embedded web server
 
