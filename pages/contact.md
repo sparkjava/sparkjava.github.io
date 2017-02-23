@@ -17,9 +17,10 @@ Please try to email us. If this fails, follow [these steps](/news/#best-practice
 
 ## The Team
 If you have questions that can't be asked elsewhere, please contact the most appropriate team member.
-We're usually very friendly, but questions like "How do I add Spark to Maven", should be asked on 
+We're usually pretty friendly, but questions like "How do I add Spark to Maven", should be asked on 
 [stack overflow](http://stackoverflow.com/questions/tagged/spark-java) with the "spark-java" tag.
 
+<div class="team">
 {% include macros/teamMember.html
     firstName = "Per"
     lastName = "Wendel"
@@ -30,7 +31,6 @@ We're usually very friendly, but questions like "How do I add Spark to Maven", s
     email = "per.i.wendel@gmail.com"
     imgFile = "per.png"
 %}
-
 {% include macros/teamMember.html 
     firstName = "David"
     lastName = "Åse"
@@ -40,3 +40,4 @@ We're usually very friendly, but questions like "How do I add Spark to Maven", s
     email = "mail.davidase@gmail.com" 
     imgFile = "david.png"
 %}
+</div>
