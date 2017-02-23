@@ -29,14 +29,26 @@ p {
     margin: 1.5em 0 0.25em;
 }
 
+main {
+    padding: 40px 0;
+    h1, h2, h3, .notification {
+        &:nth-child(1),
+        &:nth-child(2) {
+            margin-top: 0;
+        }
+    }
+}
+
 .width-limit {
     width: 100%;
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     max-width: 840px;
     margin: 0 auto;
 }
 
 .notification {
+    margin: 15px 0;
     background: #f5f5f5;
     padding: 15px;
     border-left: 5px solid $spark-orange;
@@ -62,7 +74,7 @@ p {
     list-style: none;
     padding: 0;
     margin-left: 430px;
-    top: 110px;
+    top: 120px;
     z-index: 999999;
     ul {
         margin: 0;
@@ -88,6 +100,25 @@ p {
     }
 }
 
+.tutorial {
+    padding: 5px 15px;
+    border-left: 5px solid #eee;
+    + .tutorial {
+        margin-top: 48px;
+    }
+    h2 {
+        margin: 0;
+        font: 22px "Trebuchet MS", Helvetica, sans-serif;
+    }
+    p {
+        font-size: 15px;
+        margin: 5px 0;
+    }
+    .tutorial-meta {
+        font-size: 13px;
+        color: #888;
+    }
+}
 
 pre { // scrollbar in code examples
     &::-webkit-scrollbar {

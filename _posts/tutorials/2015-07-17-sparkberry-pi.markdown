@@ -7,10 +7,7 @@ comments: true
 permalink: /tutorials/raspberry-pi
 summary: > 
   This tutorial will show you how to turn your Raspberry Pi into a webserver in a matter of minutes, 
-  using Spark and Groovy. Spark was chosen for the tutorial because "Spark is as easy as it gets".
-  <br>
-  </em> The tutorial is written by Renato Athaydes and originally appeared on his 
-  <a href="https://sites.google.com/a/athaydes.com/renato-athaydes/posts/agroovywebserverrunningonraspberrypiinminutes" target="_blank">google site</a>.
+  using Spark and Groovy. Spark was chosen for the tutorial because <em>"Spark is as easy as it gets"</em>.
 ---
 
 ## Background
