@@ -39,3 +39,18 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .team {
+        .team-member {
+            width: 100%;
+            &:nth-child(even),
+            &:nth-child(odd) {
+                margin: 0;
+            }
+            + .team-member {
+                margin-top: 20px;
+            }
+        }
+    }
+}
