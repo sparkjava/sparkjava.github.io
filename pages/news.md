@@ -1,6 +1,7 @@
 ---
 layout: default
 title: News
+rightmenu: true
 permalink: /news/
 ---
 
@@ -22,6 +23,7 @@ to get the latest news, and other Spark related content
 </div>
 
 ## Spark point releases (Feb 2017) {#spark-point-releases}
+
 We have upped the frequency of releases lately, so the current version is 2.5.5. We will publish small updates more frequently, but we will not promote them heavily. Changelogs will only be made for minor releases (next will be 2.6).
 
 ## Spark 2.5.1/2.5.2 static files vulnerability {#vulnerability}
@@ -135,6 +137,7 @@ For the past couple of weeks we've been showing users on the documentation page 
 
 ### Survey results
 <img src="/img/news/survey1.png" alt="Spark survey results image 1">
+
 As expected, a lot of our users (51%) use Spark to create REST APIs, but the amount of people who use Spark to create webpages is pretty high too (25%). Most people use Spark for personal projects (57%), but a lot also use it at work (42%).
 
 A surprisingly high number of our users seem to be using Spark for educational purposes, which is cool. We've seen the most educational traffic from Brown University (thank you Miyazaki-sensei, if you have any feedback from you or your students, please let us know).
@@ -142,12 +145,15 @@ A surprisingly high number of our users seem to be using Spark for educational p
 Note: It was possible to select as many alternatives as you wanted for this question, so keep in mind that there is a lot of overlap between the different groups.
 
 <img src="/img/news/survey2.png" alt="Spark survey results image 2">
+
 As can be seen from the first question, about 80% of our users have not deployed their application. These people have been omitted from this chart, making the sample size approximately 50 people. Still, it indicates that Spark is a viable candidate for bigger projects.
 
 <img src="/img/news/survey3.png" alt="Spark survey results image 3">
+
 No big surprises here. As most Spark users create REST APIs without any view, they have little interest in template engines. Good news for Freemarker users though, we will work on better code examples for you guys in the coming months, showing that it's definitely possible (and easy) to create a web application with a MVC'ish structure in Spark!
 
 <img src="/img/news/survey4.png" alt="Spark survey results image 4">
+
 We're glad to see that 90% of our users think that Spark's documentation is okay or better ("Good" being the largest group at 41%). If you find any faults or have any input regarding the documentation, please let us know. We would like all our users to think that our documentation is at least okay.
 
 ## Spark 2.1 released (Dec 2014) {#spark-21-released}

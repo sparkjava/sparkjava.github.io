@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tutorials
+rightmenu: true
 permalink: /tutorials/
 ---
 
