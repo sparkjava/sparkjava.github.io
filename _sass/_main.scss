@@ -41,6 +41,15 @@ p, li {
     }
 }
 
+pre {
+    margin: .5em 0;
+    background: #333;
+    padding: 15px;
+    border-radius: 5px;
+    color: #f5f5f5;
+    overflow-x: scroll;
+}
+
 main {
     padding: 40px 0;
     h1, h2, h3, .notification {
@@ -54,10 +63,6 @@ main {
         display: block;
         max-width: 100%;
     }
-}
-
-.anchor {
-    height: 100px;
 }
 
 .notification {
@@ -74,10 +79,13 @@ main {
 }
 
 .template-engine {
-    margin-top: 50px;
+    margin-top: 32px;
     h2, 
     p {
         margin: 5px 0;    
+    }
+    pre {
+        font-size: 14px;
     }
 }
 .template-engine-list {

@@ -37,7 +37,7 @@ permalink: /documentation/
 # Getting started
 
 **1:** Create a new maven project and add the dependency to your [POM.xml](http://maven.apache.org/pom.html):
-~~~markup
+~~~xml
 <dependency>
     <groupId>com.sparkjava</groupId>
     <artifactId>spark-core</artifactId>
@@ -247,7 +247,7 @@ request.session().raw()                    // Return servlet object
 ~~~
 
 # Halting
-To immediately stop a request within a filter or route use:
+To immediately stop a request within a filter or route use `halt()`:
 ~~~java
 halt();                // halt 
 halt(401);             // halt with status
@@ -578,7 +578,7 @@ public class EchoWebSocket {
 # Other web server
 To run Spark on another web server (instead of the embedded jetty server), an implementation of the interface `spark.servlet.SparkApplication` is needed. You have to initialize your routes in the `init()` method, and the following filter might have to be configured in your web.xml:
 
-~~~markup
+~~~xml
 <filter>
     <filter-name>SparkFilter</filter-name>
     <filter-class>spark.servlet.SparkFilter</filter-class>
@@ -632,7 +632,7 @@ Examples can be found on the project's page on [GitHub](https://github.com/perwe
 _Note: This applies to the standard configuration of Spark (embedded jetty). If you're using Spark with some other webserver, this might not apply to you._
 
 To upload a file you need a form and a post handler. First, create a form with the correct enctype, and an input field with the type "file" and a name of your choice (here "upoaded_file"):
-~~~markup
+~~~html
 <form method='post' enctype='multipart/form-data'>
     <input type='file' name='uploaded_file'>
     <button>Upload picture</button>"
@@ -671,7 +671,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 ~~~
 
 To enable logging, just add the following dependency to your project:
-~~~markup
+~~~xml
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-simple</artifactId>

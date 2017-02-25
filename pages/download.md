@@ -14,7 +14,7 @@ Spark Framework is available both on [Maven Central](http://search.maven.org/#se
 ### Maven Users
 Add the following snippet to your [POM](http://maven.apache.org/pom.html):
 
-~~~markup
+~~~xml
 <dependency>
     <groupId>com.sparkjava</groupId>
     <artifactId>spark-core</artifactId>
