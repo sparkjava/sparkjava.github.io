@@ -9,7 +9,7 @@ summary: This tutorial will teach you how to use a database with your Spark appl
 ---
 
 ## What you will learn in this post
-In my [last tutorial]({% post_url 2015-04-03-spark-lombok-jackson-reduce-boilerplate %}) we saw how to use Java 8 with Spark, Lombok and Jackson to create a lightweight REST service. One thing we did not examine was how to persist (store) data. 
+In my [last tutorial](/tutorials/reducing-java-boilerplate) we saw how to use Java 8 with Spark, Lombok and Jackson to create a lightweight REST service. One thing we did not examine was how to persist (store) data. 
 In this post I would like to describe a way to organize the integration of the database layer with the rest of your Spark application.
 
 In this post we will see
@@ -50,7 +50,7 @@ In the end if I am sure that supporting one database (let's say <a href="http://
 ## Designing the Model
 Let's assume you have access to a database. During development I would suggest to use a PostgreSQL server running in a Docker container:
 
-* if you are already using Docker do not miss the [tutorial on running Spark inside a Docker container]({% post_url 2015-04-14-getting-started-with-spark-and-docker %}) 
+* if you are already using Docker do not miss the [tutorial on running Spark inside a Docker container](/tutorials/docker) 
 * if you are new to Docker you could check out a tutorial I wrote about <a href="http://tomassetti.me/getting-started-with-docker-from-a-developer-point-of-view-how-to-build-an-environment-you-can-trust/" target="_blank">getting started with Docker from a developer point of view</a> .
 
 Docker or non Docker, I would assume you can now connect to your database.

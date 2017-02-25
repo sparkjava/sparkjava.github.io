@@ -8,7 +8,7 @@ permalink: /tutorials/reducing-java-boilerplate
 summary: This tutorial will teach you how to create a minimal RESTful application for a blog, using JSON to transfer data. You will learn about setting up a complete Spark project, using Jackson and Lombok for awesome descriptive exchange objects.
 ---
 
-## Getting started with Spark:  Create a lightweight RESTful application in Java
+## Getting started with Spark: Create a lightweight RESTful application in Java
 Recently I have been writing a RESTful service using <a href="http://sparkjava.com" target="_blank">Spark</a>, a web framework for Java (which is not related to Apache Spark). When we planned to write this I was ready to the unavoidable Javaesque avalanche of interfaces, boilerplate code and deep hierarchies. I was very surprised to find out that an alternative world exists also for the developers confined to Java.
 
 In this post we are going to see how to build a RESTful application for a blog, using JSON to transfer data. We will see:
