@@ -5,11 +5,10 @@ author: <a href="http://eherrera.net" target="_blank">Esteban Herrera</a>
 date:   2015-09-22 10:34:52
 comments: true
 permalink: /tutorials/twitter-clone
+github: https://github.com/eh3rrera/minitwit
 summary: >
   This tutorial will walk you through the steps of creating a mini Twitter clone using Spark, Freemarker, Spring, and HSQLDB to show you how to build a simple but complete web application.
 ---
-
-<div class="notification"><em>The complete code for this application is available on <a href="https://github.com/eh3rrera/minitwit" target="_blank">GitHub</a>.</em></div>
 
 ## What you will learn
 In this tutorial, you will learn how to create a web application using <a href="http://sparkjava.com" target="_blank">Spark</a> and <a href="http://freemarker.org/" target="_blank">Freemarker</a> on the view layer, <a href="http://projects.spring.io/spring-framework/" target="_blank">Spring</a> for dependency injection and data access, and <a href="http://hsqldb.org/" target="_blank">HSQLDB</a> as the database.

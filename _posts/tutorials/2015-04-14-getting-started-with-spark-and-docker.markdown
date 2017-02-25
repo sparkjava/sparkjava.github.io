@@ -5,6 +5,7 @@ date:   2015-04-14 10:34:52
 author: Matthias Lübken from <a href="https://giantswarm.io/" target="_blank">GiantSwarm</a> 
 comments: true
 permalink: /tutorials/docker
+github: https://github.com/giantswarm/sparkexample
 summary: > 
   This tutorial provides a short and simple example on how to get started with Java development on Docker. 
   <br>

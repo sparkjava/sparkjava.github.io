@@ -5,15 +5,10 @@ author: <a href="https://www.linkedin.com/in/davidaase" target="_blank">David Å
 date: 2016-06-26 11:11:11
 comments: true
 permalink: /tutorials/ajax-without-writing-javascript
+github: https://github.com/tipsy/spark-intercooler
 summary: >
  Learn how to create a modern single page application in Spark and intercooler.js without writing JavaScript.
 ---
-
-<div class="notification">
-  <em>The source code for this tutorial can be found on <a href="https://github.com/tipsy/spark-intercooler" target="_blank">GitHub</a>. Please fork/clone and look while you read.
-  <br>
-  Big thanks to <a href="https://twitter.com/carson_gross" target="_blank">Carson Gross</a> for his <a href="https://github.com/carsongross/todomvc/commit/25e314742db6dcef8866ded1e795832d3ecc73ba" target="_blank">intercooler.js TodoMVC example</a>.</em>
-</div>
 
 ## What You Will Learn
 You will learn how to create a single page AJAX application that can create new todos, edit existing todos, filter todos on status, and more, all on the server side without writing any JavaScript. The tutorial uses a client side library, <a href="http://intercoolerjs.org/" target="_blank">intercooler.js</a>, which lets you write declarative AJAX applications using HTML attributes.

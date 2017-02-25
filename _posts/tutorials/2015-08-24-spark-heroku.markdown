@@ -5,6 +5,7 @@ author: <a href="https://www.linkedin.com/in/davidaase" target="_blank">David Å
 date: 2015-08-24 11:11:11
 comments: true
 permalink: /tutorials/heroku
+github: https://github.com/tipsy/spark-heroku-example
 summary: >
  In this tutorial you will learn how to deploy a Hello World application on Heroku!
 ---
@@ -22,10 +23,10 @@ Heroku takes care of everything related to deployment, and gives you easy access
 ## Initial Setup
 Before we get started, there are a few things we need to do:
 
-* Create a free Heroku account <a href="https://signup.heroku.com/dc" target="_blank">(sign up)</a>
-* Install <a href="https://toolbelt.heroku.com/" target="_blank">Heroku Toolbelt</a>
-* Install <a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html" target="_blank">Maven</a> 
-* Set up the Spark Hello World example with Maven <a href="/2015/04/02/setting-up-a-spark-project-with-maven.html" target="_blank">(→ Tutorial)</a>
+* Create a free Heroku account [(sign up)](https://signup.heroku.com/dc)
+* Install [Heroku Toolbelt](https://toolbelt.heroku.com/)
+* Install [Maven](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+* Set up the Spark Hello World example with Maven [(→ Tutorial)](/tutorials/maven-setup)
 
 ## Configuring Maven
 This is actually where most of the work is done. In order to easily deploy a Java application anywhere, you have to create a jar file containing your application and all of its dependencies. Open the pom.xml of your Spark Maven project and add the following configuration (below your dependencies tag):

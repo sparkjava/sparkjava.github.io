@@ -5,11 +5,10 @@ author: <a href="https://www.linkedin.com/in/davidaase" target="_blank">David Å
 date: 2016-06-10 11:11:11
 comments: true
 permalink: /tutorials/application-structure
+github: https://github.com/tipsy/spark-basic-structure
 summary: >
  In this tutorial you will learn how to create a basic Spark application with filters, controllers, views, authentication, localization, error handling, and more.
 ---
-
-<div class="notification"><em>The source code for this tutorial can be found on <a href="https://github.com/tipsy/spark-basic-structure" target="_blank">GitHub</a>.</em></div>
 
 ## What You Will Learn
 

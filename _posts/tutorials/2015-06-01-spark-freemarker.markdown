@@ -5,11 +5,10 @@ author: <a href="http://tomassetti.me" target="_blank">Federico Tomassetti</a>
 date:   2015-06-01 10:34:52
 comments: true
 permalink: /tutorials/json-and-html-from-same-endpoints
+github: https://github.com/sparktutorials/BlogService_SparkExample
 summary: >
   In previous posts we have seen how to develop a RESTful service using Spark and we have implemented a service to manage a blog. In this post we are going to create an HTML view of the blog, showing how the same data can be exposed through both JSON and HTML.
 ---
-
-<em>The code discussed in this post is available on <a href="https://github.com/sparktutorials/BlogService_SparkExample" target="_blank">GitHub</a></em>
 
 ## Offering the same data as both JSON and HTML
 To offer the same data as JSON or HTML we could use different strategies. The two simplest ones are:
