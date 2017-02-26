@@ -1,7 +1,10 @@
 # Site settings
 title: Spark Framework tutorials - Spark Java tutorials
+sparkversion: 2.5.5
+templateversion: 2.5.5
 description: > # > means to ignore newlines as long as indent is kept
-  A collection of Spark Framework tutorials. Get started with learning Spark Framework today.
+  Spark Framework - Create web applications in Java rapidly. 
+  Spark is a micro web framework that lets you focus on writing your code, not boilerplate code.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://sparktutorials.github.io" # the base hostname & protocol for your site
 twitter_username: sparkjava

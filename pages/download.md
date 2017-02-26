@@ -14,22 +14,7 @@ Spark Framework is available both on [Maven Central](http://search.maven.org/#se
 ### Maven Users
 Add the following snippet to your [POM](http://maven.apache.org/pom.html):
 
-~~~xml
-<dependency>
-    <groupId>com.sparkjava</groupId>
-    <artifactId>spark-core</artifactId>
-    <version>2.5.5</version>
-</dependency>
-~~~
-
-Not familiar with Maven? Click [here](/tutorials/maven-setup) for more detailed instructions.
-
-### Other dependency managers:
-~~~java
-Gradle : compile "com.sparkjava:spark-core:2.5.5" //add to build.gradle
-   Ivy : <dependency org="com.sparkjava" name="spark-core" rev="2.5.5" conf="build" /> //ivy.xml
-   SBT : libraryDependencies += "com.sparkjava" % "spark-core" % "2.5.5" //build.sbt
-~~~
+{% include macros/mavenDep.md %}
 
 ## Non-maven Users
 Clone the repo from [GitHub](https://github.com/perwendel/spark).\\

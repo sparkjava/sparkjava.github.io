@@ -37,22 +37,7 @@ permalink: /documentation/
 # Getting started
 
 **1:** Create a new maven project and add the dependency to your [POM.xml](http://maven.apache.org/pom.html):
-~~~xml
-<dependency>
-    <groupId>com.sparkjava</groupId>
-    <artifactId>spark-core</artifactId>
-    <version>2.5.5</version>
-</dependency>
-~~~
-
-[Not familiar with Maven? Click here for more detailed instructions.](/tutorials/maven-setup)
-
-### Other dependency managers:
-~~~java
-Gradle : compile "com.sparkjava:spark-core:2.5.5" //add to build.gradle
-   Ivy : <dependency org="com.sparkjava" name="spark-core" rev="2.5.5" conf="build" /> //ivy.xml
-   SBT : libraryDependencies += "com.sparkjava" % "spark-core" % "2.5.5" //build.sbt
-~~~
+{% include macros/mavenDep.md %}
 
 **2:** Start coding:
 ~~~java
@@ -472,25 +457,30 @@ public static String render(Map<String, Object> model, String templatePath) {
     return new VelocityTemplateEngine().render(new ModelAndView(model, templatePath));
 }
 ~~~
+{% assign templateEngines = "velocity,freemarker,mustache,handlebars,jade,thymeleaf,pebble,water,jtwig,jinjava,jetbrick" | split: "," %}
 
-{% include macros/templateEngine.html name="velocity" version = "2.5.5" %}
-{% include macros/templateEngine.html name="freemarker" version = "2.5.5" %}
-{% include macros/templateEngine.html name="mustache" version = "2.5.5" %}
-{% include macros/templateEngine.html name="handlebars" version = "2.5.5" %}
-{% include macros/templateEngine.html name="jade" version = "2.5.5" %}
-{% include macros/templateEngine.html name="thymeleaf" version = "2.5.5" %}
-{% include macros/templateEngine.html name="pebble" version = "2.5.5" %}
-{% include macros/templateEngine.html name="water" version = "2.5.5" %}
-{% include macros/templateEngine.html name="jtwig" version = "2.5.5" %}
-{% include macros/templateEngine.html name="jinjava" version = "2.5.5" %}
-{% include macros/templateEngine.html name="jetbrick" version = "2.5.5" %}
+{% for templateEngine in templateEngines %}
+<div class="template-engine" markdown="1">
+## {{templateEngine | capitalize}} {#{{templateEngine}}}
+Renders HTML using the {{templateEngine | capitalize}} template engine. 
+Source and example on [GitHub](https://github.com/perwendel/spark-template-engines/tree/master/spark-template-{{templateEngine}}).
+~~~markup
+<dependency>
+    <groupId>com.sparkjava</groupId>
+    <artifactId>spark-template-{{templateEngine}}</artifactId>
+    <version>{{site.templateversion}}</version>
+</dependency>
+~~~
+</div>
+{% endfor %}
 
 # Embedded web server
 
 Standalone Spark runs on an embedded [Jetty](http://eclipse.org/jetty/) web server.
 
 ## Port
-By default, Spark runs on port 4567. If you want to set another port, use `port()`. This has to be done before declaring routes and filters:
+By default, Spark runs on port 4567. If you want to set another port, use `port()`. 
+This has to be done before declaring routes and filters:
 
 ~~~java
 port(8080); // Spark will run on port 8080
