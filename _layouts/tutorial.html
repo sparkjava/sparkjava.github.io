@@ -12,7 +12,7 @@ istutorial: true
             {% if page.author %} 
                 • Written by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
             {% endif %}
-            <span id="timeToRead"></span>
+            <span id="timeToRead">Reading time: <b>0-0 min</b></span>
             {% if page.github %} 
             <br>
             <em class="github-link">
@@ -25,7 +25,6 @@ istutorial: true
     </div>
     <div class="post-content" itemprop="articleBody">
         {{ content }}
-        {% include calculateTimeToRead.html %}
     </div>
 </article>
 {% include socialButtons.html %}
