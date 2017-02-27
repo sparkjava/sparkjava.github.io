@@ -34,7 +34,7 @@ permalink: /documentation/
 * [Examples/FAQ](#examples-and-faq)
 </div>
 
-# Getting started
+<h1 id="getting-started" class="no-margin-top">Getting started</h1>
 
 **1:** Create a new maven project and add the dependency to your [POM.xml](http://maven.apache.org/pom.html):
 {% include macros/mavenDep.md %}

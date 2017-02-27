@@ -5,7 +5,7 @@ rightmenu: false
 permalink: /
 ---
 
-## Quick start
+<h2 class="no-margin-top">Quick start</h2>
 ~~~java
 import static spark.Spark.*;
 

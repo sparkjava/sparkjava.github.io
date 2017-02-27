@@ -5,7 +5,7 @@ rightmenu: true
 permalink: /news/
 ---
 
-<div class="notification" markdown="1">
+<div class="notification no-margin-top" markdown="1">
 Follow us on 
 [Twitter](https://twitter.com/sparkjava)
 to get the latest news, and other Spark related content
