@@ -123,7 +123,7 @@ If you have a lot of routes, it can be helpful to separate them into groups. Thi
 
 ~~~java
 path("/api", () -> {
-    before((q, a) -> log.info("Received api call"));
+    before("/*", (q, a) -> log.info("Received api call"));
     path("/email", () -> {
         post("/add",       EmailApi.addEmail);
         put("/change",     EmailApi.changeEmail);
@@ -136,16 +136,6 @@ path("/api", () -> {
     });
 });
 ~~~
-
-## Route overview
-In Spark 2.4 we added an experimental feature, the Route Overview:
-
-~~~java
-RouteOverview.enableRouteOverview(); // overview available at /debug/routeoverview/
-RouteOverview.enableRouteOverview("/my/overview/path"); // available at specified path
-~~~
-
-*Note: This feature has a lot of reflection magic, it might not work perfectly with some JDK versions.*
 
 # Request
 Request information and functionality is provided by the request parameter:
@@ -354,11 +344,13 @@ A file `/public/css/style.css` is made available as `http://{host}:{port}/css/st
 staticFiles.location("/public"); // Static files
 ~~~
 
-You can also assign an external folder (a folder not in the classpath) to serve static files by using the `staticFiles.externalLocation()` method.
+You can also assign an external folder (a folder not in the classpath) to serve static files by using the `staticFiles.externalLocation()` method.\\
 
 ~~~java
 staticFiles.externalLocation(System.getProperty("java.io.tmpdir"));
 ~~~
+
+Static files location must be configured before route mapping. If your application has no routes, `init()` must be called manually after location is set.
 
 ## Cache/Expire time
 You can specify the expire time (in seconds). By default there is no caching.
