@@ -64,8 +64,22 @@ By calling the stop() method the server is stopped and all routes are cleared.
 stop();
 ~~~
 
-## What about starting the server?
+## Wait, what about starting the server?
 The server is automatically started when you do something that requires the server to be started (i.e. declaring a route or setting the port). You can also manually start the server by calling `init()`.
+
+You can specify what should happen if initialization fails: 
+
+~~~java
+initExceptionHandler((e) -> System.out.println("Uh-oh"));
+~~~
+
+The default behaviour is to log and shut down: 
+~~~java
+private Consumer<Exception> initExceptionHandler = (e) -> {
+    LOG.error("ignite failed", e);
+    System.exit(100);
+};
+~~~
 
 # Routes
 The main building block of a Spark application is a set of routes. A route is made up of three simple pieces:
@@ -229,6 +243,8 @@ halt(401);             // halt with status
 halt("Body Message");  // halt with message
 halt(401, "Go away!"); // halt with status and message
 ~~~
+
+`halt()` is not intended to be used inside exception-mappers.
 
 # Filters
 Before-filters are evaluated **before each request**, and can read the request and read/modify the response.  
