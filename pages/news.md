@@ -12,7 +12,7 @@ to get the latest news, and other Spark related content
 </div>
 
 <div class="right-menu" markdown="1">
-* [Spark point releases](#spark-point-releases)
+* [Spark 2.6 released](#spark-26-released)
 * [Spark 2.5.2 vulnerability](#vulnerability)
 * [Spark 2.5 released](#spark-25-released)
 * [Spark 2.3 released](#spark-23-released)
@@ -22,9 +22,35 @@ to get the latest news, and other Spark related content
 * [Spark 2.0 released](#spark-20-released)
 </div>
 
-## Spark point releases (Feb 2017) {#spark-point-releases}
+## Spark 2.6 released (April 2017) {#spark-26-released}
 
-We have upped the frequency of releases lately, so the current version is 2.5.5. We will publish small updates more frequently, but we will not promote them heavily. Changelogs will only be made for minor releases (next will be 2.6).
+It's an easter miracle, {% include macros/mavenLink.html version="2.6" %}.
+
+Changes
+* **Embedded Jetty is now fully configurable**
+* Added `path()` method for grouping routes
+* Added `afterAfter()` filter (a finally-filter that runs after everything else)
+* Added `initExceptionHandler()` for overriding default behavior if Sparks fails to start
+* Added error page handlers `internalServerError()`, `notFound()` and `add()` (general)
+* Added `queryParamsOrDefault()` method to `Request`
+* Added typeinfo to exceptions in `ExceptionMapper`s
+* A lot of improvements and fixes to static file handling
+  * MIME-type guessing
+  * Custom headers
+  * Various bugfixes
+* `ExceptionMapper`s are now cleared on `stop()`
+* Fixed `OutOfMemoryError` due to caching of chunked data
+* Domain has been added to `cookie()`, and a bug where cookies couldn't be deleted was fixed
+* Added `activeThreadCount()` to expose number of active threads
+* Added `port()` method to get current port
+* Add general error logging
+* Added `X-Forwarded-For` support in `request.ip()`
+* `Spark.halt()` now returns `HaltException` instead of `void`
+* Added `QueryParamsMap.hasKey()`
+* Param/splat decoding now happens after matching
+* Support for multiple Spark applications in filter configuration
+* A lot of other minor fixes/features have also been added. {% include macros/seeCommitHistory.html %}
+
 
 ## Spark 2.5.1/2.5.2 static files vulnerability {#vulnerability}
 Early November 2016 a [vulnerability](http://www.cvedetails.com/vulnerability-list/vendor_id-15987/product_id-34958/version_id-203903/Sparkjava-Spark-2.5.html) in how Spark 2.5/2.5.1 handles static files was exposed through a [mailing list](http://marc.info/?l=full-disclosure&m=147814643630342&w=2).
