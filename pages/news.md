@@ -27,7 +27,7 @@ to get the latest news, and other Spark related content
 It's an easter miracle, {% include macros/mavenLink.html version="2.6" %}.
 
 Changes
-* **Embedded Jetty is now fully configurable**
+* Embedded Jetty is now fully configurable **(!)**
 * Added `path()` method for grouping routes
 * Added `afterAfter()` filter (a finally-filter that runs after everything else)
 * Added `initExceptionHandler()` for overriding default behavior if Sparks fails to start
