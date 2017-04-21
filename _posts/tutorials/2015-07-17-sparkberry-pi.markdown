@@ -9,15 +9,15 @@ summary: >
   This tutorial will show you how to turn your Raspberry Pi into a webserver in a matter of minutes, 
   using Spark and Groovy. Spark was chosen for the tutorial because <em>"Spark is as easy as it gets"</em>.
 ---
-## Changes April 2017
-  This tutorial was updated to 
-  1) resolved issues with classloader. 
-  2) documented new installation process for groovy.
-  3) updated Spark version.
-  4) added slf4j logging.
-  
-  -- <a href="https://kendrick-wilson.appspot.com" target="_blank">Kendrick Wilson</a>. 
 
+*This tutorial was updated by [Kendrick Wilson](https://kendrick-wilson.appspot.com) in 2017 to:*
+
+<div class="small-list" markdown="1">
+1. Resolve issues with classloader
+2. Documented new installation process for groovy
+3. Update Spark version
+4. Add slf4j logging
+</div>
 
 ## Background
 I just bought a Raspberry Pi to have some fun. First with code, and hopefully with hardware later.
