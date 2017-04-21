@@ -24,7 +24,7 @@ to get the latest news, and other Spark related content
 
 ## Spark 2.6 released (April 2017) {#spark-26-released}
 
-It's an easter miracle, {% include macros/mavenLink.html version="2.6" %}.
+It's a slightly delayed easter miracle, {% include macros/mavenLink.html version="2.6" %}.
 
 Changes
 * Embedded Jetty is now fully configurable **(!)**
